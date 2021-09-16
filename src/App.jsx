@@ -1,10 +1,29 @@
 import React from "react";
-import { Button } from '@material-ui/core';
+import Home from "./components/Home/Home";
+import { ThemeProvider, createTheme} from '@material-ui/core';
+
+
 
 function App() {
+// Criando a variavel tema referente ao estilo
+  const theme = createTheme({
+    palette: {
+        primary: {
+        main: '#f44336'
+        },
+        secondary: {
+        main: '#3f51b5'
+        }
+    }
+})
+
+  
   return (
     <>
-      <Button variant="contained" color="primary">Clique bitch</Button>
+      <ThemeProvider theme={theme}>
+        <Home></Home>
+      </ThemeProvider>
+      
     </>
   );
 }
