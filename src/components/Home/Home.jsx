@@ -3,7 +3,13 @@ import React from "react";
 import { makeStyles, AppBar, Toolbar, IconButton, Button } from "@material-ui/core";
 
 import MenuIcon from '@material-ui/icons/Menu'
-import YouTubeIcon from '@material-ui/icons/YouTube';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+
+import VideoCallIcon from '@material-ui/icons/VideoCall';
+import AppsIcon from '@material-ui/icons/Apps';
+import NotificationsIcon from '@material-ui/icons/Notifications';
+
+
 
 // Utilizando o Style Components
 const useStyles = makeStyles((theme) => ({
@@ -16,6 +22,14 @@ const useStyles = makeStyles((theme) => ({
     },
     grow: {
         flexGrow: 1
+    },
+    menuIcon: {
+        paddingRight: theme.spacing(5),
+        paddingLeft: theme.spacing(6)
+    },
+    icons: {
+        paddingRight: theme.spacing(1),
+        marginRight: theme.spacing(2)
     }
 }))
 
@@ -28,15 +42,30 @@ const Home = () =>{
             <div className={classes.root} >
                 <AppBar position="static" className={classes.backgroundNavBar}>
                     <Toolbar>
-                        <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+                        <IconButton className={classes.menuButton} color="inherit" aria-label="menu">
                             <MenuIcon />
                         </IconButton>
                         
-                        <YouTubeIcon />
-
+                        <img src="/images/logo.svg" alt="" />                        
                         <div className={classes.grow}/>
+
+                        <IconButton className={classes.icons} color="inherit">
+                            <VideoCallIcon />
+                        </IconButton>
+
+                        <IconButton className={classes.icons} color="inherit">
+                            <AppsIcon />
+                        </IconButton>
+
+                        <IconButton className={classes.icons} color="inherit">
+                            <NotificationsIcon />
+                        </IconButton>
                         
-                        <Button color="inherit">Fazer Login</Button>
+                        <Button 
+                            variant="outlined" color="inherit" 
+                            startIcon={<AccountCircleIcon />}
+                        >Fazer Login
+                        </Button>
                     </Toolbar>
                 </AppBar>  
             </div>
